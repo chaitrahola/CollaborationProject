@@ -1,0 +1,65 @@
+Welcome, {{uname}}
+<br>
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
+	rel="stylesheet" type="text/css" />
+<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+<style>
+span,time{color:black;}
+
+body {
+	background: url(http://www.alexanderdesignsgh.com/img/slide1-bg.jpg)
+		no-repeat center fixed;
+	background-size: cover;
+	border-radius: 5px;
+	padding: 20px;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Event Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+</head>
+<body ng-controller="chatController">
+	<div class="container">
+		<form ng-submit="addMessage()" name="messageForm"><br>
+			<input type="text" placeholder="Compose a new message..."
+				ng-model="message" />
+			<div class="in">
+				<span class="count" ng-bind="max - message.length"
+					ng-class="{danger: message.length > max}">140</span>
+				<button class="btn-btn-primary btn-sm"
+					ng-disabled="message.length > max || message.length === 0">Send</button>
+			</div>
+		</form>
+		<hr />
+		<p ng-repeat="message in messages | orderBy:'time':true"
+			class="message">
+			<!-- <span
+				ng-class="{self: username.self}">{{uname}}</span> -->
+				<span  ng-class="{self: message.self}">{{message.message}}</span> <br>
+			<time>{{message.time | date:'HH:mm'}}</time>
+			
+		</p>
+		
+	</div>
+	
+	
+
+
+
+</body>
+</html>
